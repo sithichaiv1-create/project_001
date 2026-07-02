@@ -6,7 +6,8 @@ import { useState } from "react";
 export default function FormRegister() {
 
   const [form, setForm] = useState({
-        txt_firstname: ""
+        txt_firstname: "",
+        txt_lastname: ""
    });
 
   const handleChange = (e) => {
@@ -16,10 +17,10 @@ export default function FormRegister() {
     });
   };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-      console.log(txt_firstname)
-    }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(form.txt_firstname);
+  }
 
   return (
     <div className="max-w-6xl mx-auto p-6">
@@ -32,17 +33,17 @@ export default function FormRegister() {
           </h1>
         </div>
 
-            <form onSubmit={handleSubmit} className='p-6 space-y-5'>
-                <label className="text-black">กรุณาระบุชื่อ {form.txt_firstname}</label> 
-               <input type="text" name="txt_firstname" defaultValue="{form.txt_firstname}" onChange={handleChange} className='w-full border border-black rounded-md px-4 py-2'/>
-               
-               <label className="text-black">กรุณาระบุนามสกุล {form.txt_lastname}</label>
-               <input type="text" name="txt_lastname" defaultValue="{form.txt_lastname}" onChange={handleChange} className='w-full border border-black rounded-md px-4 py-2'/>
+      <form onSubmit={handleSubmit} className='p-6 space-y-5'>
 
-               <button type="submit" className="px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">บันทึกข้อมูล </button>
-            </form>
-           </div>
-           </div>
-        
-    );
+        <label className="text-black">กรุณาระบุชื่อ</label>
+        <input type="text" name="txt_firstname" defaultValue={form.txt_firstname} onChange={handleChange} className='w-full border text-black border-black rounded-md px-4 py-2' placeholder='firstname' />
+
+        <label className="text-black">กรุณาระบุนาสกุล</label>
+        <input type="text" name="txt_lastname" defaultValue={form.txt_lastname} onChange={handleChange} className='w-full border text-black border-black rounded-md px-4 py-2' placeholder='lastname' />
+
+        <button type="submit" className="px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">บันทึกข้อมูล</button>
+      </form>
+    </div>
+    </div>
+  )
 }
