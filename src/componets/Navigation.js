@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import LoginModal from '@/componets/LoginModal'
 
 export default function Navigation() {
@@ -28,9 +29,8 @@ export default function Navigation() {
     { name: 'ติดต่อเรา', href: '/Contact' },
   ]
 
-  // 🛠️ กำหนดตัวแปรสำหรับควบคุมสีข้อความ เพื่อไม่ให้โค้ดยาวเกินไป
-  const textColor = isScrolled ? 'text-gray-900' : 'text-black'
-  const hoverBgColor = isScrolled ? 'hover:bg-gray-100' : 'hover:bg-black/20'
+  const textColor = isScrolled ? 'text-gray-900' : 'text-white'
+  const hoverBgColor = isScrolled ? 'hover:bg-gray-100' : 'hover:bg-white/20'
 
   return (
     <>
@@ -49,17 +49,23 @@ export default function Navigation() {
               href="/"
               className="flex items-center gap-3 group"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 text-white font-bold text-lg shadow-lg shadow-indigo-500/30 transition-transform group-hover:scale-105">
-                M
+              {/* 🛠️ โลโก้ S²P ทรงปีก ไม่ครอบกรอบ/พื้นหลัง เพื่อไม่ให้ปีกถูกตัด */}
+              <div className="flex h-14 w-14 items-center justify-center transition-transform group-hover:scale-105">
+                <Image
+                  src="/logo.png"
+                  alt="Sudtupung Logo"
+                  width={56}
+                  height={56}
+                  className="object-contain w-full h-full drop-shadow-[0_2px_6px_rgba(220,38,38,0.35)]"
+                />
               </div>
 
               <div className="flex flex-col">
-                {/* 🛠️ เปลี่ยนสีข้อความโลโก้ตาม isScrolled */}
                 <h1 className={`text-xl font-extrabold tracking-tight transition-colors duration-300 ${textColor}`}>
-                  NextShop
+                  Sudtupung
                 </h1>
-                <p className={`text-[11px] font-medium uppercase tracking-wider transition-colors duration-300 ${isScrolled ? 'text-gray-500' : 'text-gray-300'}`}>
-                  E-Commerce
+                <p className={`text-[11px] font-medium uppercase tracking-wider transition-colors duration-300 ${isScrolled ? 'text-gray-500' : 'text-gray-200'}`}>
+                  Throne of Iron
                 </p>
               </div>
             </Link>
@@ -73,7 +79,6 @@ export default function Navigation() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    // 🛠️ เปลี่ยนสีข้อความเมนู และเอฟเฟกต์ตอน hover
                     className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${textColor} ${hoverBgColor}`}
                   >
                     {item.name}
@@ -84,13 +89,12 @@ export default function Navigation() {
               {/* Cart Button */}
               <Link
                 href="/cart"
-                // 🛠️ เปลี่ยนสีไอคอนตะกร้า และเอฟเฟกต์ตอน hover
                 className={`relative p-2.5 rounded-full transition-all duration-300 ${textColor} ${hoverBgColor}`}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                 </svg>
-                <span className="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-600 text-[10px] font-bold text-white ring-2 ring-white shadow-sm">
+                <span className="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-[10px] font-bold text-white ring-2 ring-white shadow-sm">
                   3
                 </span>
               </Link>
@@ -99,11 +103,10 @@ export default function Navigation() {
               <div className="hidden md:block">
                 <button
                   onClick={() => setIsLoginModalOpen(true)}
-                  // 🛠️ สลับสีปุ่ม Login ให้ตรงข้ามกับพื้นหลังเสมอ
                   className={`inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium transition-all duration-300 ${
                     isScrolled
-                      ? 'bg-gray-900 text-white hover:bg-gray-800 shadow-md'
-                      : 'bg-white text-gray-900 hover:bg-gray-100 shadow-sm'
+                      ? 'bg-black text-white hover:bg-red-700 shadow-md'
+                      : 'bg-red-700 text-white hover:bg-red-600 shadow-sm'
                   }`}
                 >
                   เข้าสู่ระบบ
@@ -113,7 +116,6 @@ export default function Navigation() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                // 🛠️ เปลี่ยนสีไอคอนแฮมเบอร์เกอร์บนมือถือ
                 className={`md:hidden rounded-full p-2.5 transition-all duration-300 ${textColor} ${hoverBgColor}`}
               >
                 <div className="space-y-1.5">
@@ -125,7 +127,7 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile Menu Dropdown (ยังคงเป็นสีขาวเหมือนเดิมเพื่อให้อ่านง่ายบนมือถือ) */}
+          {/* Mobile Menu Dropdown */}
           <div
             className={`md:hidden transition-all duration-300 ease-in-out origin-top ${
               isOpen ? 'opacity-100 scale-y-100 mb-4' : 'opacity-0 scale-y-0 h-0'
@@ -137,7 +139,7 @@ export default function Navigation() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="px-4 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all duration-200 hover:bg-gray-50 hover:text-indigo-600"
+                  className="px-4 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all duration-200 hover:bg-gray-50 hover:text-red-600"
                 >
                   {item.name}
                 </Link>
@@ -150,7 +152,7 @@ export default function Navigation() {
                   setIsOpen(false)
                   setIsLoginModalOpen(true)
                 }}
-                className="mt-1 w-full rounded-xl bg-gray-900 px-4 py-3 text-center text-sm font-medium text-white shadow-md transition-all hover:bg-gray-800"
+                className="mt-1 w-full rounded-xl bg-black px-4 py-3 text-center text-sm font-medium text-white shadow-md transition-all hover:bg-red-700"
               >
                 เข้าสู่ระบบ
               </button>
@@ -160,9 +162,9 @@ export default function Navigation() {
       </nav>
 
       <LoginModal
-  isOpen={isLoginModalOpen}
-  onClose={() => setIsLoginModalOpen(false)}
-/>
+        isOpen={isLoginModalOpen}
+        onClose={() => setIsLoginModalOpen(false)}
+      />
     </>
   )
 }

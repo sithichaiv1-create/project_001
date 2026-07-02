@@ -1,7 +1,7 @@
 import React from 'react'
-import Herosection from '@/Components/Herosection'
-import Cardsection from '@/Components/Cardsection'
-import Footersection from '@/Components/Footersection'
+import Herosection from '@/componets/Herosection'
+import Cardsection from '@/componets/Cardsection'
+import Footersection from '@/componets/Footersection'
 
 export default function Home() {
   return (

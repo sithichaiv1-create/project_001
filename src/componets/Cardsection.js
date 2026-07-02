@@ -5,16 +5,14 @@ export default function Cardsection() {
     <section className="py-12 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
        
-        {/* หัวข้อ Section */}
         <div className="mb-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900">สินค้าแนะนำ</h2>
           <p className="mt-2 text-gray-600">เลือกชมสินค้าที่น่าสนใจของเราในเดือนนี้</p>
         </div>
 
-        {/* ตะแกรง Grid แบบ 3 คอลัมน์ */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
          
-          {/* ==================== การ์ดใบที่ 1 ==================== */}
+          {/* การ์ดใบที่ 1 */}
           <div className="border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white">
             <div className="relative w-full h-48 bg-gray-100">
               <Image
@@ -32,15 +30,15 @@ export default function Cardsection() {
                 ตัดเสียงรบกวนได้ดีเยี่ยม แบตเตอรี่ใช้งานได้ยาวนาน 30 ชั่วโมง
               </p>
               <div className="mt-4 flex items-center justify-between">
-                <span className="text-xl font-bold text-blue-600">฿4,990</span>
-                <button className="px-4 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors">
+                <span className="text-xl font-bold text-red-600">฿4,990</span>
+                <button className="px-4 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-red-700 transition-colors">
                   เพิ่มลงตะกร้า
                 </button>
               </div>
             </div>
           </div>
 
-          {/* ==================== การ์ดใบที่ 2 ==================== */}
+          {/* การ์ดใบที่ 2 */}
           <div className="border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white">
             <div className="relative w-full h-48 bg-gray-100">
               <Image
@@ -58,15 +56,15 @@ export default function Cardsection() {
                 กล้องดิจิตอลความละเอียดสูง พร้อมเลนส์คิท 15-45mm
               </p>
               <div className="mt-4 flex items-center justify-between">
-                <span className="text-xl font-bold text-blue-600">฿25,900</span>
-                <button className="px-4 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors">
+                <span className="text-xl font-bold text-red-600">฿25,900</span>
+                <button className="px-4 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-red-700 transition-colors">
                   เพิ่มลงตะกร้า
                 </button>
               </div>
             </div>
           </div>
 
-          {/* ==================== การ์ดใบที่ 3 ==================== */}
+          {/* การ์ดใบที่ 3 */}
           <div className="border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white">
             <div className="relative w-full h-48 bg-gray-100">
               <Image
@@ -84,8 +82,8 @@ export default function Cardsection() {
                 ติดตามการออกกำลังกาย วัดอัตราการเต้นของหัวใจ กันน้ำได้
               </p>
               <div className="mt-4 flex items-center justify-between">
-                <span className="text-xl font-bold text-blue-600">฿3,200</span>
-                <button className="px-4 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors">
+                <span className="text-xl font-bold text-red-600">฿3,200</span>
+                <button className="px-4 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-red-700 transition-colors">
                   เพิ่มลงตะกร้า
                 </button>
               </div>
