@@ -52,7 +52,7 @@ export default function Navigation() {
               {/* 🛠️ โลโก้ S²P ทรงปีก ไม่ครอบกรอบ/พื้นหลัง เพื่อไม่ให้ปีกถูกตัด */}
               <div className="flex h-14 w-14 items-center justify-center transition-transform group-hover:scale-105">
                 <Image
-                  src="/logo.png"
+                  src="/logo/logo1.png"
                   alt="Sudtupung Logo"
                   width={56}
                   height={56}
