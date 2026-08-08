@@ -16,9 +16,9 @@ export default function Herosection() {
             </span>
 
             <h1 className="mt-6 text-4xl font-extrabold leading-tight text-white md:text-6xl">
-              สร้างอนาคตด้วย
+              WELCOME TO
               <span className="block text-red-300">
-                เทคโนโลยีและนวัตกรรม
+                SUDTUPUNG
               </span>
             </h1>
 
@@ -50,9 +50,9 @@ export default function Herosection() {
               <div className="absolute inset-0 animate-pulse rounded-full bg-white/20 blur-3xl"></div>
 
               <img
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900"
-                alt="Technology"
-                className="relative w-full max-w-lg rounded-3xl shadow-2xl"
+                src="/logo/S2P_LOGO_6.png"
+                alt="S2P Logo"
+                className="relative w-full max-w-lg rounded-3xl"
               />
             </div>
           </div>
